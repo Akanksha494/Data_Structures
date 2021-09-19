@@ -39,6 +39,20 @@ void printList(Node *head) {
     cout << endl;
 }
 
+void insertAtBegin(Node **head, int data) {
+    Node *node = new Node();
+    
+    node -> data = data;
+    node -> next = NULL;
+    
+    if(*head == NULL) {
+        *head = node;
+    } else {
+        node -> next = *head;
+        *head = node;
+    }
+}
+
 int main()
 {
     Node *head = NULL; 
@@ -50,6 +64,9 @@ int main()
         
         insertatend(&head, a);
     }
+    
+    printList(head);
+    insertAtBegin(&head, 6);
     
     printList(head);
 }
