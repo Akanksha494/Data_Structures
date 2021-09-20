@@ -77,6 +77,26 @@ void insertAtPos(Node **head, int data, int pos) {
     }
 }
 
+void nthLastNode(Node *head, int pos) {
+    Node *fast = head;
+    Node *slow = head;
+    
+    int count = 0;
+    
+    while(count < pos) {
+        count++;
+        fast = fast -> next;
+    }
+    
+    
+    while(fast != NULL) {
+        slow = slow -> next;
+        fast = fast -> next;
+    }
+    
+    cout << slow -> data << endl;
+}
+
 void printList(Node *head) {
     Node *temp = head;
     
@@ -108,5 +128,7 @@ int main()
     insertAtPos(&head, 7, 2);
     
     printList(head);
+    
+    nthLastNode(head, 2);
 }
     
