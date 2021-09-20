@@ -28,16 +28,7 @@ void insertatend(Node **head, int data) {
         temp -> next = node;
     }
 }
-void printList(Node *head) {
-    Node *temp = head;
-    
-    while(temp != NULL) {
-        cout << temp -> data << " ";
-        temp = temp -> next;
-    }
-    
-    cout << endl;
-}
+
 
 void insertAtBegin(Node **head, int data) {
     Node *node = new Node();
@@ -51,6 +42,50 @@ void insertAtBegin(Node **head, int data) {
         node -> next = *head;
         *head = node;
     }
+}
+
+
+
+void insertAtPos(Node **head, int data, int pos) {
+    
+    Node *node = new Node();
+    
+    node -> data = data;
+    node -> next = NULL;
+    
+    Node *temp = *head;
+    Node *prev = NULL;
+    
+    int i = 0; // pos = 0
+    
+    while(temp != NULL && i < pos) {
+        prev = temp;
+        temp = temp -> next;
+        i++;
+    }
+    
+    if(temp == NULL) {
+        cout << "Invalid Position";
+        
+    } else if(pos == 0) {
+        node -> next = temp;
+        *head = node;
+        
+    } else {
+        node -> next = temp;
+        prev -> next = node;
+    }
+}
+
+void printList(Node *head) {
+    Node *temp = head;
+    
+    while(temp != NULL) {
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    
+    cout << endl;
 }
 
 int main()
@@ -67,6 +102,10 @@ int main()
     
     printList(head);
     insertAtBegin(&head, 6);
+    
+    printList(head);
+
+    insertAtPos(&head, 7, 2);
     
     printList(head);
 }
