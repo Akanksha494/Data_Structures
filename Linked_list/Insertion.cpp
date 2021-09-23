@@ -97,6 +97,31 @@ void nthLastNode(Node *head, int pos) {
     cout << slow -> data << endl;
 }
 
+
+
+void middleElement(Node *head) {
+    Node *fast = head -> next;
+    Node *slow = head;
+    
+    while(fast != NULL && fast -> next != NULL) {
+        slow = slow -> next;
+        fast = fast -> next -> next;
+    }
+    
+    cout << slow -> data << endl;
+}
+
+void printList(Node *head) {
+    Node *temp = head;
+    
+    while(temp != NULL) {
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    
+    cout << endl;
+}
+
 void printList(Node *head) {
     Node *temp = head;
     
@@ -130,5 +155,10 @@ int main()
     printList(head);
     
     nthLastNode(head, 2);
+    
+    middleElement(head);
+
+    return 0;
+
 }
     
