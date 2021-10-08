@@ -15,6 +15,11 @@ void insertatend(Node **head, int data) {
     node -> data = data;
     node -> next = NULL;
     
+   /*if head is null then head will be equal to node 
+   else new temporary node will be created and equal to head,
+   while temp next not equal to null then temp equals temp next
+   after that the value of node will be stored in temp next*/
+    
     if(*head == NULL) {
         *head = node;
         
