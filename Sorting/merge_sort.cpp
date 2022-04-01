@@ -45,7 +45,7 @@ void merge(int a[], int l, int mid, int h)
     }
     else
     {
-        while(i <== mid)
+        while(i <= mid)
         {
             temp[k] = a[i];
             k++;
