@@ -9,14 +9,14 @@ void mergesort(int ar1[],int ar2[],int n1,int n2){
 		int i=0;
 		int j=gap;
 
-		while(j<(n+m))
+		while(j<(n1,n2))
 		{
 			if(j<n && ar1[i]>ar1[j])
 			 swap(ar1[i],ar1[j]);
-            else if(j>=n && i<n && ar1[i]>ar2[j-n])
-              swap(ar1[i],ar2[j-n]);
-            else if(j>=n && i>=n && ar1[i-n]>ar2[j-n])
-              swap(ar1[i-n],ar2[j-n]);
+            else if(j>=n1 && i<n1 && ar1[i]>ar2[j-n1])
+              swap(ar1[i],ar2[j-n1]);
+            else if(j>=n1 && i>=n1 && ar1[i-n1]>ar2[j-n1])
+              swap(ar1[i-n1],ar2[j-n1]);
              i++;
              j++;
 
